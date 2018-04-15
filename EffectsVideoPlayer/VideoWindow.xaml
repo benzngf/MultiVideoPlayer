@@ -1,0 +1,31 @@
+﻿<Window x:Class="EffectsVideoPlayer.VideoWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:EffectsVideoPlayer"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="180" Width="320"
+        WindowStyle="None"
+        AllowsTransparency="True"
+        ShowActivated="False"
+        Focusable="False"
+        ShowInTaskbar="False"
+        IsEnabled="False"
+        FocusManager.IsFocusScope="False"
+        Topmost="True">
+    <Window.Background>
+        <RadialGradientBrush 
+          GradientOrigin="0.5,0.5" 
+          Center="0.5,0.5" RadiusX="0.5" RadiusY="0.5">
+            <RadialGradientBrush.GradientStops>
+                <GradientStop Color="#00000000" Offset="0"/>
+                <GradientStop Color="#00000000" Offset="0.7" />
+                <GradientStop Color="#FF000000" Offset="1.2" />
+            </RadialGradientBrush.GradientStops>
+        </RadialGradientBrush>
+    </Window.Background>
+    <Canvas  ClipToBounds="true" Name="MainCanvas">
+        
+    </Canvas>
+</Window>

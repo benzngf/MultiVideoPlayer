@@ -1,0 +1,43 @@
+﻿<Window x:Class="EffectsVideoPlayer.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:EffectsVideoPlayer"
+        mc:Ignorable="d"
+        Title="Control Panel" MinHeight="100" MinWidth="500" ResizeMode="CanResize" Width="500" Height="200" SizeToContent="Width">
+    <Window.Background>
+        <SolidColorBrush>
+            <SolidColorBrush.Color>
+                <Color ScA="0.8" ScR="0.02" ScG="0.02" ScB="0.02" />
+            </SolidColorBrush.Color>
+        </SolidColorBrush>
+    </Window.Background>
+    <ScrollViewer HorizontalScrollBarVisibility="Hidden" VerticalScrollBarVisibility="Auto">
+        <ScrollViewer.Margin>
+            <Thickness>0,5,0,0</Thickness>
+        </ScrollViewer.Margin>
+        <StackPanel Name="ControlStack">
+            <StackPanel>
+                <Button Click="NewVideoWindow">
+                    + Add a container window with the options below
+                </Button>
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,5,0,0">
+                    <TextBlock Foreground="White" VerticalAlignment="Center">Window Name</TextBlock>
+                    <TextBox Width="330" Margin="5,0,2,0" Height="20"  Text="Content Window" Foreground="White" Background="#10FFFFFF" VerticalAlignment="Center" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" MaxLines="1" Name="winName" BorderThickness="0" BorderBrush="#FFFF407A"/>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,5,0,0">
+                    <TextBlock Foreground="White" VerticalAlignment="Center">Window Size</TextBlock>
+                    <TextBox Width="50" Margin="5,0,2,0" Height="20"  Text="320" Foreground="White" Background="#10FFFFFF" VerticalAlignment="Center" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" MaxLines="1" Name="winWidth" TextChanged="checkNumberPositive" BorderThickness="0" BorderBrush="#FFFF407A"/>
+                    <TextBlock Foreground="White"  VerticalAlignment="Center">x</TextBlock>
+                    <TextBox Width="50" Margin="5,0,2,0" Height="20"  Text="180" Foreground="White" Background="#10FFFFFF" VerticalAlignment="Center" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" MaxLines="1" Name="winHeight" TextChanged="checkNumberPositive" BorderThickness="0" BorderBrush="#FFFF407A"/>
+                    <TextBlock Foreground="White" VerticalAlignment="Center">, Window Position (</TextBlock>
+                    <TextBox Width="50" Margin="5,0,2,0" Height="20"  Text="0" Foreground="White" Background="#10FFFFFF" VerticalAlignment="Center" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" MaxLines="1" Name="winPosX" TextChanged="checkNumber" BorderThickness="0" BorderBrush="#FFFF407A"/>
+                    <TextBlock Foreground="White"  VerticalAlignment="Center">,</TextBlock>
+                    <TextBox Width="50" Margin="5,0,2,0" Height="20"  Text="0" Foreground="White" Background="#10FFFFFF" VerticalAlignment="Center" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" MaxLines="1" Name="winPosY" TextChanged="checkNumber" BorderThickness="0" BorderBrush="#FFFF407A"/>
+                    <TextBlock Foreground="White" VerticalAlignment="Center">)</TextBlock>
+                </StackPanel>
+            </StackPanel>
+        </StackPanel>
+    </ScrollViewer>
+</Window>

@@ -1,0 +1,36 @@
+﻿<Button x:Class="EffectsVideoPlayer.CommonBtn" 
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:effectsvideoplayer="clr-namespace:EffectsVideoPlayer"
+        Width="32" Height="32" BorderThickness="0" SnapsToDevicePixels="True">
+    <Button.Template>
+        <ControlTemplate TargetType="Button">
+            <Grid x:Name="BG" Background="{TemplateBinding Background}">
+                <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" Name="content"  SnapsToDevicePixels="True"/>
+            </Grid>
+            <ControlTemplate.Triggers>
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Setter Property="Background" TargetName="BG">
+                        <Setter.Value>
+                            <ImageBrush  ImageSource="Images\UI_0014_FrameHover.png"/>
+                        </Setter.Value>
+                    </Setter>
+                </Trigger>
+                <Trigger Property="IsPressed"  Value="True">
+                    <Setter Property="Background" TargetName="BG">
+                        <Setter.Value>
+                            <ImageBrush  ImageSource="Images\UI_0012_FramePressed.png"/>
+                        </Setter.Value>
+                    </Setter>
+                </Trigger>
+            </ControlTemplate.Triggers>
+        </ControlTemplate>
+    </Button.Template>
+    <Button.Background>
+        <ImageBrush  ImageSource="Images\UI_0015_Frame.png"/>
+    </Button.Background>
+</Button>
+    
+    

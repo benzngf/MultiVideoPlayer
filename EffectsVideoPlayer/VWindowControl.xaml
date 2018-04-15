@@ -1,0 +1,39 @@
+﻿<StackPanel x:Class="EffectsVideoPlayer.VWindowControl"  Margin="5"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:EffectsVideoPlayer"
+        mc:Ignorable="d" Width="auto">
+    <StackPanel.Background>
+        <SolidColorBrush>
+            <SolidColorBrush.Color>
+                <Color ScA="1" ScR="0.05" ScG="0.05" ScB="0.05" />
+            </SolidColorBrush.Color>
+        </SolidColorBrush>
+    </StackPanel.Background>
+    <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,5,0,0">
+        <TextBlock Foreground="White" VerticalAlignment="Center" Name="winName">Display Window</TextBlock>
+        <TextBox Width="50" Margin="5,0,2,0" Height="20"  VerticalAlignment="Center" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" MaxLines="1" Name="winWidth" TextChanged="ChangeWindowSize" BorderThickness="0">
+            <TextBox.BorderBrush>
+                <SolidColorBrush Color="#FFFF407A"/>
+            </TextBox.BorderBrush>
+        </TextBox>
+        <TextBlock Foreground="White"  VerticalAlignment="Center">x</TextBlock>
+        <TextBox Width="50" Margin="2,0,5,0" Height="20"  VerticalAlignment="Center" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" MaxLines="1" Name="winHeight" TextChanged="ChangeWindowSize" BorderThickness="0">
+            <TextBox.BorderBrush>
+                <SolidColorBrush Color="#FFFF407A"/>
+            </TextBox.BorderBrush>
+        </TextBox>
+        <local:CommonBtn PreviewMouseLeftButtonDown="DraggableStart_Move" PreviewMouseLeftButtonUp="DraggableEnd_Move"  PreviewMouseMove="MouseMoving" x:Name="MoveBtn">
+            <Image Source="Images\UI_0011_Move.png"/>
+        </local:CommonBtn>
+        <local:CommonBtn Click="CloseWindow">
+            <Image Source="Images\UI_0006_Close.png"/>
+        </local:CommonBtn>
+    </StackPanel>
+    <Button Click="Click_AddVidLayer">
+        Add Video Layer...
+     </Button>
+ </StackPanel>
+
